@@ -19,7 +19,7 @@ http.createServer( function(request, response) {
 
 		fs.readFile(filename, "binary", function(err, file) {
 			if(err) {
-				response.sendHeader(500, {"Content-Type": "text/plain"} );
+				response.sendHeader(500, {"Content-Type": "text/plain"});
 				response.write(err + "¥n");
 				response.close();
 				return;
@@ -30,6 +30,6 @@ http.createServer( function(request, response) {
 			response.close();
 		} );
 	} );
-} ).listen(8080);
+} ).listen(process.env.PORT);
 
-sys.puts("Server running at port 8080");
+sys.puts("Server running...");
